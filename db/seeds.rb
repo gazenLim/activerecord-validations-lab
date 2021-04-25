@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Author.destroy_all
+Post.destroy_all
+
+20.times do
+    Author.create(name: Faker::Name.name ,
+phone_number: Faker::PhoneNumber.cell_phone)
+
+end
+
+20.times do
+    Post.create(title: Faker::Book.title,
+    content: Faker::Books::Lovecraft.sentence,
+    summary: Faker::Books::Lovecraft.paragraph_by_chars ,
+    category: Faker::Book.genre)
+
+    end
+    puts "its ok"
